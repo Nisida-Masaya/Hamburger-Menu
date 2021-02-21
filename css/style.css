@@ -1,0 +1,118 @@
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #ffffff;
+}
+
+.nav {
+    position: fixed;
+    left: -320px;
+    /*左に隠す*/
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    padding-top: 40px;
+    background-color: #ffffff;
+    transition: all .6s;
+    z-index: 200;
+    overflow: auto;
+    /*メニューが多い時はスクロールできるように*/
+}
+
+.hamburger {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 300;
+}
+
+.nav_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav_item {
+    text-align: center;
+    padding: 0 14px;
+}
+
+.nav_item a {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #eeeeee;
+    text-decoration: none;
+    color: #111111;
+}
+
+.nav_item a:hover {
+    background-color: #eeeeee;
+}
+
+.ham_line {
+    position: absolute;
+    left: 11px;
+    width: 18px;
+    height: 1px;
+    background-color: #111;
+    transition: all .6s;
+}
+
+.ham_line_1 {
+    top: 14px;
+}
+
+.ham_line_2 {
+    top: 20px;
+}
+
+.ham_line_3 {
+    top: 26px;
+}
+
+.bg_black {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    /*ボックスを非表示*/
+    transition: all .6s;
+    cursor: pointer;
+}
+
+/*表示された時*/
+
+.nav-open .nav {
+    left: 0;
+}
+
+.nav-open .bg_black {
+    opacity: .8;
+    visibility: visible;
+}
+
+.nav-open .ham_line_1 {
+    transform: rotate(-45deg);
+    top: 20px;
+}
+
+.nav-open .ham_line_2 {
+    width: 0;
+    left: 50%;
+}
+
+.nav-open .ham_line_3 {
+    transform: rotate(45deg);
+    top: 20px;
+}
